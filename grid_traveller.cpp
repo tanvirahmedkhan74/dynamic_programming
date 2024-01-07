@@ -7,7 +7,7 @@ typedef long long int ll;
 std::map<std::pair<int, int>, ll> memo;
 
 ll grid_traveller(ll m, ll n){
-    std::pair<int, int> curr_pair = std::make_pair(m, n);
+    std::pair<int, int> curr_pair = std::make_pair(std::min(m, n), std::max(m,n));
     if(memo.find(curr_pair) != memo.end()) return memo[curr_pair];
 
     if(m == 0 || n == 0) return 0;
